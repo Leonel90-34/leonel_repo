@@ -1,9 +1,9 @@
 <?php
 class Database {
-    private $host = 'localhost';
-    private $user = 'root';
-    private $pass = '';
-    private $dbname = 'student_monitoring';
+    private $host = getenv('DB_HOST');
+    private $user = getenv('DB_USER');
+    private $pass = getenv('DB_PASS');
+    private $dbname = getenv('DB_NAME');
     public $conn;
 
     public function __construct() {
