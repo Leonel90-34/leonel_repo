@@ -1,12 +1,12 @@
 <?php
 session_start();
-if(!isset($_SESSION['user_id'])){
-    header("Location: views/login.php");
+if (!isset($_SESSION['user_id'])) {
+    header("Location: views/auth/login.php");
     exit;
 }
 
 // Redirect based on role
-switch($_SESSION['role']){
+switch ($_SESSION['role']) {
     case 'admin':
         header("Location: views/admin/dashboard.php");
         break;
@@ -25,5 +25,3 @@ switch($_SESSION['role']){
     default:
         echo "Role not found!";
 }
-
-?>

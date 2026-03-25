@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once '../config.php';
-require_once '../classes/User.php';
+require_once '../../config.php';
+require_once '../../classes/User.php';
 
 $message = '';
 if (isset($_POST['login'])) {
@@ -11,7 +11,7 @@ if (isset($_POST['login'])) {
         session_regenerate_id(true); // prevent session fixation
         $_SESSION['user_id'] = $result['id'];
         $_SESSION['role'] = $result['role'];
-        header("Location: ../index.php");
+        header("Location: ../../index.php");
         exit;
     } else {
         $message = "Invalid Username or Password!";
@@ -39,7 +39,8 @@ if (isset($_POST['login'])) {
         }
 
         /* Animated shapes in background */
-        body::before, body::after {
+        body::before,
+        body::after {
             content: '';
             position: absolute;
             border-radius: 50%;
@@ -64,14 +65,19 @@ if (isset($_POST['login'])) {
         }
 
         @keyframes float {
-            0% { transform: translateY(0) translateX(0) rotate(0deg); }
-            100% { transform: translateY(-50px) translateX(50px) rotate(45deg); }
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-50px) translateX(50px) rotate(45deg);
+            }
         }
 
         .login-card {
             border-radius: 15px;
             backdrop-filter: blur(10px);
-            background-color: rgba(255,255,255,0.85);
+            background-color: rgba(255, 255, 255, 0.85);
             padding: 2rem;
         }
     </style>
@@ -118,4 +124,5 @@ if (isset($_POST['login'])) {
     </div>
 
 </body>
+
 </html>

@@ -25,7 +25,7 @@ $user = Auth::user();
             </span>
 
             <!-- Logout -->
-            <a href="../../logout.php" class="btn btn-danger btn-sm">
+            <a href="../../views/auth/logout.php" class="btn btn-danger btn-sm">
                 <i class="fas fa-sign-out-alt me-1"></i> Logout
             </a>
 
